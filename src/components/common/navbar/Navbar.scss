@@ -1,0 +1,15 @@
+@import '/src/styles/styles.scss';
+
+.Navbar {
+    @extend %flexCenterVertically;
+    justify-content: flex-end;
+    height: $navbarHeight;
+    background-color: $primary;
+    padding: 0 $mediumPadding;
+
+    &__link {
+        color: $white;
+        margin-left:$mediumMargin;
+        text-decoration: none;
+    }
+}

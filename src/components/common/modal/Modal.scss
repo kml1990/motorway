@@ -1,0 +1,14 @@
+.Modal {
+    z-index: 1000;
+    position: absolute;
+    top: 12.5vh;
+    left: 12.5vw;
+    max-height: 75vh;
+    width: 75vw;
+
+    &__body {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+}

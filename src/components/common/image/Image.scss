@@ -1,0 +1,33 @@
+$imageXsm:              5rem;
+$imageSm:               10rem;
+$imageMd:               20rem;
+$imageLg:               30rem;
+$imageXlg:              75vh;
+
+.Image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;    
+
+    &--xSmall {
+        height: $imageXsm;
+    }
+
+    &--small {
+        height: $imageSm;
+    }
+
+    &--medium {
+        height: $imageMd;
+    }
+
+    &--large {
+        height: $imageLg;
+    }
+
+    &--xLarge {
+        height: $imageXlg;
+    }
+
+    
+}

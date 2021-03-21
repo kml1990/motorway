@@ -1,0 +1,10 @@
+@import '/src/styles/styles.scss';
+
+.Form {
+    @extend %flexCenter;
+    flex-wrap: wrap;
+
+    &__formik {
+        width: 20rem;
+    }
+}

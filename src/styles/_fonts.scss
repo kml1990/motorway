@@ -1,0 +1,42 @@
+/*  
+ *  FONT
+ */
+
+$maxFontSize:               3rem !default;
+$minFontSize:               0.75rem !default;
+
+$xLargeFontSize:            $maxFontSize;
+$largeFontSize:             $maxFontSize * 0.55;
+$mediumFontSize:            $maxFontSize * 0.45;
+$smallFontSize:             $maxFontSize * 0.35;
+$xSmallFontSize:            $minFontSize;
+
+/*  
+ *  How to use:
+ *  @include heading(red, 3rem) { color: red; };
+ */
+@mixin heading($color, $size) {
+    color: $color;
+    font-size: $size;
+    line-height: $size;
+}
+
+h1 {
+    @include heading($black, $xLargeFontSize);
+}
+
+h2 {
+    @include heading($greyDark, $largeFontSize);
+}
+
+h3 {
+    @include heading($black, $mediumFontSize);
+}
+
+h4 {
+    @include heading($black, $smallFontSize);
+}
+
+h5 {
+    @include heading($black, $xSmallFontSize);
+}

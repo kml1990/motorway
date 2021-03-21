@@ -1,78 +1,49 @@
-
-# Motorway UI Test
+# Running this project
   
+- Run `npm install`
 
-Welcome to the Motorway UI technical test. This test focuses on user experience, and your skills with HTML, CSS, a11y and leveraging browser APIs.
+- Run `npm run serve`
 
-  
-## Set up
+- Run `npm run start`
 
-This repo is a slightly modified Create React App and an Express server which serves a JSON feed of images.
+## Comments
 
-- Clone the repo and run `npm install`
+### UI development
 
-- `npm run serve` will run the server
+* Project was tested in Chrome Browser
+* Project is fully responsive
+* Application has two routes - /gallery and /form
+* Simple CSS grid was added to display images
+* In order to fit images of the same size in the grid 'object-fit' property was used which is currently not supported on IE browsers.
+* Depending on the need, I would also consider using `background-image` CSS property for image display.
+* Alternatively if backend could provide various image resolutions for each image, a `HTML picture` tag could be used to load images.
+* Each image can be previewed in modal by hovering over the image and clicking 'preview image' button. This functionality is also accessible on mobile, by clicking on image.
+* User avatar was embeded into image and is visible on hover and active state.
+* Image filter (grayscale) was added on hover and active state. This property is also not supported on IE browsers.
 
-- in another terminal window `npm run start` will start CRA
+### Performance
 
-After this, CRA will open a tab with the app running, usually `localhost:3000`. If you look in `src/App.js` you'll see the API call to the server is already made and will console log out the results.
+* To speed up initial page render, a library called `react-lazyload` was used. It only loads images that are visible in the viewport.
+* Often image optimisations are handled on the backend, therefore I would use tool such as `imagemin` to provide optimised images to the client.
+* Some of the ways to measure performance of this application are:
+    * Check `finish` time in nextwork tab, this would include testing with various throttling options.
+    * Recording `runtime performance` to check performance issues.
+    * Recording `runtime performance` with different CPU options select to simulate app behaviour on mobile devices.
+    * Running an audit on `lighthouse` tool.
 
-#### Note
+### Forms
 
-- The server and CRA are watching the relevant files and will hot reload if any changes are made.
-
-- Feel free to modify or install whatever code you feel is necessary. If installing packages which are wrappers for native browsers APIs please leave a comment explaining why.
-
-
-## Tasks
-
-### 1. UI development
-
-Create a responsive UI to display the images returned by the API.
-
-The aim is to demonstrate your experience and knowledge of HTML, CSS, JS and React features; and demonstrate creative thinking in how images can be presented and manipulated.
-
-Images aren't optimised and their dimensions are varied, so you will need to take this into account.
-
-#### Inspiration:
-
-https://twitter.com/andybarefoot/status/1251844621262602242
-
-http://www.artist-developer.com/
-
-#### Some ideas to get you started:
-
-Resizable thumbnails
-
-Modal to review full size images
-
-Image effects or filters
+* Formik was used for handling from validation and submission.
+* Yup was used to define validation schema for Formik.
 
 
-### 2. Performance
+### Additional comments
 
-The API that is returning images is rather slow. Show how it can be sped up, and show how you would measure the improvement in performance.
-
-
-### 3. Forms
-
-One of the oldest yet trickiest parts of web development is forms, so we’d like to see how you handle them. 
-
-Add a form to your app with the following fields. The form doesn't need to submit to anywhere, but must validate on the client.
-
-- [ ] Name
-- [ ] Email
-- [ ] Date of birth
-- [ ] Favourite colour
-- [ ] Salary (using a range input)
-
-
-## Time allowed
-
-We appreciate that your time is valuable and recommend you not spend more than 2 hours on these tasks.
-
-
-## Notes
-
-The goal of the test is to prove your understanding of the concepts of modern HTML/CSS/JS, but not to produce something production ready or pixel perfect.
-Your work will be tested in the browser of your choice, so please specify this when submitting. This can include pre-release browsers such as Chrome Canary or Safari Technology Preview if you want to work with experimental features.
+* TypeScript was added to the project to limit possible bugs, add static typing and code completion.
+* Scss support was added to the project to enable CSS preprocessing and keep consistency in the app.
+* Due to limited time, performance aspect has not been fully expolored for possible solutions on loading high resolution images.
+* I have recently created a little project on github that allows me to quickly startup a project and some of the settings/components/styles were copied over to this project. These include
+    * Linter/prieetier/husky settings
+    * Styles
+    * Some of the common components.
+* Due to limited time, tests were not added to this tech test 

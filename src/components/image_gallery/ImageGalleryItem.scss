@@ -1,0 +1,36 @@
+@import '/src/styles/styles.scss';
+
+.ImageGalleryItem {
+    @extend %flexCenter;
+    position: relative;
+    overflow: hidden;
+
+    &__avatar {
+        position: absolute;
+        bottom: $smallPadding;
+        right: $smallPadding;
+        width: $avatarSize;
+        border-radius: $avatarSize;
+        border: $border;
+        border-color: $white;
+        overflow: hidden;
+        visibility: hidden;
+    }
+
+    &__previewButton {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    &:hover,
+    &:active {
+        .ImageGalleryItem__avatar,
+        .ImageGalleryItem__previewButton {
+            visibility: visible;
+        }
+
+        .Image {
+            filter: grayscale(100%);
+        }
+    }
+}

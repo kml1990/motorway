@@ -1,0 +1,51 @@
+@import '/src/styles/styles';
+
+
+
+.Button {
+    @extend %flexCenter;
+    @extend %input;
+    flex-wrap: nowrap;
+    width: auto;
+    color: $white;
+    box-shadow: $boxShadow;
+    border: 0;
+    cursor: pointer;
+
+    &--primary {
+        background-color: $primary;
+
+        &:active {
+            background-color: $primaryDark;
+        }
+
+        &:hover {
+            background-color: $primaryLight;
+        }
+    }
+
+    &--secondary {
+        background-color: $secondary;
+
+        &:active {
+            background-color: $secondaryDark;
+        }
+
+        &:hover {
+            background-color: $secondaryLight;
+        }
+    }
+
+    &--small {
+        height: $inputSmall;
+    }
+
+    &--medium {
+        height: $inputMedium;
+    }
+
+    &--large {
+        height: $inputLarge;
+        font-size: $mediumFontSize
+    }
+}
